@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">名言集</h1>
+      <p>各名言の、詳細</p>
+      <button type="button" class="btn btn-"><a href="{% url 'list' %}">ホームに戻る</a></button>
+    </div>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+  <div class="alert alert-success" role="alert">
+    <p>タイトル :{{ object.title }}</p>
+    <p>名前 :{{ object.name }}</p>
+    <p>時代 :{{ object.age }}</p>
+    <p>中身 :{{ object.memo }}</p>
+    <a href = "{% url 'update' object.pk %}">更新する</a>
+  </div>
+</div>
+
+{% endblock content %}

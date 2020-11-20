@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">名言追加</h1>
+      <p>どんな名言を知っていますか？</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<form action="" method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="更新する">
+</form>
+<p><a href="{% url 'list' %}">ホームに戻る</a></p>
+{% endblock content %}
